@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
+        // Criando os conteúdos do Bootcamp
         Curso curso1 = new Curso();
         curso1.setTitulo("curso java");
         curso1.setDescricao("descrição curso java");
@@ -26,6 +27,7 @@ public class Main {
         System.out.println(curso2);
         System.out.println(mentoria);*/
 
+        // Criando o Bootcamp
         Bootcamp bootcamp = new Bootcamp();
         bootcamp.setNome("Bootcamp Java Developer");
         bootcamp.setDescricao("Descrição Bootcamp Java Developer");
@@ -33,6 +35,7 @@ public class Main {
         bootcamp.getConteudos().add(curso2);
         bootcamp.getConteudos().add(mentoria);
 
+        // Criando os devs e sua jornada pelo Bootcamp
         Dev devCamila = new Dev();
         devCamila.setNome("Camila");
         devCamila.inscreverBootcamp(bootcamp);

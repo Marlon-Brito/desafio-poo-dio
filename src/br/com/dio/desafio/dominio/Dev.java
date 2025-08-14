@@ -3,15 +3,18 @@ package br.com.dio.desafio.dominio;
 import java.util.*;
 
 public class Dev {
+    // Atributos
     private String nome;
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
+    // Método para se inscrever no Bootcamp
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
         bootcamp.getDevsInscritos().add(this);
     }
 
+    // Método para progredir
     public void progredir() {
         Optional<Conteudo> conteudo = this.conteudosInscritos.stream().findFirst();
         if(conteudo.isPresent()) {
@@ -22,6 +25,7 @@ public class Dev {
         }
     }
 
+    // Método para calcular total de XP
     public double calcularTotalXp() {
         Iterator<Conteudo> iterator = this.conteudosConcluidos.iterator();
         double soma = 0;
@@ -37,7 +41,7 @@ public class Dev {
                 .sum();*/
     }
 
-
+    // Métodos getters e setters
     public String getNome() {
         return nome;
     }
@@ -62,6 +66,7 @@ public class Dev {
         this.conteudosConcluidos = conteudosConcluidos;
     }
 
+    // Sobrescrevendo métodos equals e hashCode
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

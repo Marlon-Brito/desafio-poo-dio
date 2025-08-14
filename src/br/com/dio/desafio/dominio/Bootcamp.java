@@ -7,6 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Bootcamp {
+    // Atributos
     private String nome;
     private String descricao;
     private final LocalDate dataInicial = LocalDate.now();
@@ -14,7 +15,7 @@ public class Bootcamp {
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
 
-
+    // Métodos getters e setters
     public String getNome() {
         return nome;
     }
@@ -55,6 +56,7 @@ public class Bootcamp {
         this.conteudos = conteudos;
     }
 
+    // Sobrescrevendo métodos equals e hashCode
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
